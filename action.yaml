@@ -30,6 +30,7 @@ runs:
         export ENV_SETUP_PATH=${{ inputs.env-setup-path }}
         export CHECKING_PATH="${{ inputs.checking-path }}"
         export CHECKING_EXCLUDES="${{ inputs.checking-excludes }}"
-        ls .$ROOT_PATH/
-        .$ROOT_PATH/scripts/run.sh
+        ls $ROOT_PATH
+        ls $ROOT_PATH/script
+        .run.sh
       shell: bash
