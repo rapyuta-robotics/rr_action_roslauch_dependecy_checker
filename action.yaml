@@ -31,3 +31,4 @@ runs:
         export CHECKING_PATH="${{ inputs.checking-path }}"
         export CHECKING_EXCLUDES="${{ inputs.checking-excludes }}"
         ./$ROOT_PATH/run.sh
+      shell: bash
