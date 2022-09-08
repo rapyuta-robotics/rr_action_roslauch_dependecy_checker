@@ -23,7 +23,7 @@ This actions looks recursively in a path inside any ros based image and looks re
 
 ```
 - name: Check dependencies
-  uses: rapyuta-robotics/rr_action_roslauch_dependecy_checker@1.1.0
+  uses: rapyuta-robotics/rr_action_roslauch_dependecy_checker@1.0.0
   with:
     image-name: my-build-image
     env-setup-path: /catkin/ws/install/setup.bash
@@ -39,7 +39,7 @@ This actions looks recursively in a path inside any ros based image and looks re
 
 ```
 - name: Check dependencies
-  uses: rapyuta-robotics/rr_action_roslauch_dependecy_checker@1.1.0
+  uses: rapyuta-robotics/rr_action_roslauch_dependecy_checker@1.0.0
   with:
     image-name: another-image
     env-setup-path: /my/catkin/ws/install/setup.bash
