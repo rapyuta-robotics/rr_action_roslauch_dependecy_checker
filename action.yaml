@@ -21,8 +21,8 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Set up environment variables
-      id: set_env
+    - name: Run dependency check
+      id: run_check
       run: |
         export ROOT_PATH=${{ github.action_path }}
         export SCRIPTS_PATH="${{ inputs.scripts-path }}"
@@ -30,8 +30,4 @@ runs:
         export ENV_SETUP_PATH=${{ inputs.env-setup-path }}
         export CHECKING_PATH="${{ inputs.checking-path }}"
         export CHECKING_EXCLUDES="${{ inputs.checking-excludes }}"
-      shell: bash
-    - name: Run dependency check
-      id: run
-      run: ./$ROOT_PATH/run.sh
-      shell: bash
+        ./$ROOT_PATH/run.sh
