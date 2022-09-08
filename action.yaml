@@ -1,0 +1,37 @@
+name: Awesome action
+description: Wraps the slack notification action
+inputs:
+  scripts-path:
+    description: Path to copy and run the validation scripts inside the image
+    required: false
+    default: /tmp/rrcdp
+  image-name:
+    description: Name of the image to check
+    required: true
+  env-setup-path:
+    description: Absolute path to the ROS environment script inside the image
+    required: true
+  checking-path:
+    description: Absolute path to look recursively for ROS launch files to check inside the image
+    required: true
+  checking-excludes:
+    desciption: Expressions to evaluate in order to exclude them from the checking directory and its subdirectories 
+    required: false
+    default: ""
+runs:
+  using: composite
+  steps:
+    - name: Set up environment variables
+      id: set_env
+      run: |
+        export ROOT_PATH=${{ github.action_path }}
+        export SCRIPTS_PATH="${{ inputs.scripts-path }}"
+        export IMAGE_NAME="${{ inputs.image-name }}"
+        export ENV_SETUP_PATH=${{ inputs.env-setup-path }}
+        export CHECKING_PATH="${{ inputs.checking-path }}"
+        export CHECKING_EXCLUDES="${{ inputs.checking-excludes }}"
+      shell: bash
+    - name: Run dependency check
+      id: run
+      run: ./$ROOT_PATH/run.sh
+      shell: bash
