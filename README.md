@@ -35,13 +35,13 @@ This actions looks recursively in a path inside any ros based image and looks re
       *this-particular-expression*
 ```
 
-### Example withot exclusions
+### Example without exclusions
 
 ```
 - name: Check dependencies
   uses: rapyuta-robotics/rr_action_roslauch_dependecy_checker@1.1.0
   with:
-    image-name: my-build-image
+    image-name: another-image
     env-setup-path: /my/catkin/ws/install/setup.bash
     checking-path: /another/absolute/path/to/src
 ```
