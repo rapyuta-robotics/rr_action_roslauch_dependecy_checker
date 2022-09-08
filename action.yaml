@@ -31,6 +31,6 @@ runs:
         export CHECKING_PATH="${{ inputs.checking-path }}"
         export CHECKING_EXCLUDES="${{ inputs.checking-excludes }}"
         ls $ROOT_PATH
-        ls $ROOT_PATH/script
-        .run.sh
+        ls $ROOT_PATH/scripts
+        .$ROOT_PATH/scripts/run.sh
       shell: bash
