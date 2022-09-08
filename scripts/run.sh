@@ -1,5 +1,5 @@
 #!/bin/bash
-source $ROOT_PATH
+source $ROOT_PATH/scripts/log.sh
 
 out_file="$(cat /proc/sys/kernel/random/uuid).log"
 BUILD_CONTAINER_NAME=$(docker create --workdir $SCRIPTS_PATH --entrypoint "$SCRIPTS_PATH/check.sh" $IMAGE_NAME $ENV_SETUP_PATH $CHECKING_PATH "$CHECKING_EXCLUDES")
