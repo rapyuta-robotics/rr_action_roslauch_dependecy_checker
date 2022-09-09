@@ -1,6 +1,10 @@
 #!/bin/bash
 source log.sh
 
+print_usage() {
+    info "Usage: check-launch-deps.sh SETUP_FILE_PATH PATH_TO_VALIDATE [EXCLUDES]"
+}
+
 if [ ! -d "$2" ]
 then
     fatal "Path to analyze \"$2\" does not exist"
